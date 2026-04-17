@@ -41,6 +41,10 @@ These docs are intended to be usable offline. When internet access is available 
 - [Component Libraries](https://anvil.works/docs/components)
 - [URL Routing](https://anvil.works/docs/client/navigation/routing)
 
+For runtime implementation details that are not covered by public docs, the open-source Anvil runtime is available at:
+
+- [anvil-works/anvil-runtime](https://github.com/anvil-works/anvil-runtime)
+
 ## Design Goal
 
 The goal is to give an AI agent enough framework context to:

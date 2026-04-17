@@ -111,6 +111,14 @@ This folder is intended to be sufficient for common agent work. For up-to-date p
 - Component libraries: `https://anvil.works/docs/components`
 - URL routing: `https://anvil.works/docs/client/navigation/routing`
 
+## Runtime Source Code
+
+When public docs do not cover a behavior and internet access is available, the open-source Anvil runtime can be used as a secondary reference:
+
+- `https://github.com/anvil-works/anvil-runtime`
+
+Treat the target app and official docs as the first sources of truth. Use the runtime source for implementation details, drift checks, and generated DOM/runtime behavior that needs confirmation.
+
 ## Updating This Reference Set
 
 When maintaining these docs:
