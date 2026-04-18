@@ -7,7 +7,7 @@ Use these documents as a starting map, not as a substitute for the app in front 
 ## Reading Order
 
 1. [App Structure And Runtime](01_app_structure_and_runtime.md)  
-   File layout, `anvil.yaml`, app startup, local App Server behavior, dependencies, services, and local development.
+   File layout, `anvil.yaml`, app startup, Anvil CLI, local App Server behavior, dependencies, services, and local development.
 
 2. [Form Template YAML](02_form_template_yaml.md)  
    The `form_template.yaml` schema, component trees, event/data bindings, layout properties, slots, and safe editing rules.
@@ -40,6 +40,7 @@ These docs are intended to be usable offline. When internet access is available 
 - [Custom Components](https://anvil.works/docs/client/customisation/custom-components)
 - [Component Libraries](https://anvil.works/docs/components)
 - [URL Routing](https://anvil.works/docs/client/navigation/routing)
+- [Anvil CLI](https://anvil.works/docs/using-another-ide/quickstart)
 
 For runtime implementation details that are not covered by public docs, the open-source Anvil runtime is available at:
 

@@ -21,6 +21,13 @@ Then identify:
 - Existing server/service layer patterns.
 - Custom components and dependencies.
 
+If the Anvil CLI is installed, use it for lightweight local checks, but do not start syncing until the target app/account is known:
+
+```bash
+anvil version
+anvil validate anvil.yaml
+```
+
 ## Making A UI Change
 
 Checklist:
@@ -106,6 +113,7 @@ Do:
 - Copy nearby component patterns.
 - Verify handler method names exist.
 - Verify custom component references exist.
+- Run `anvil validate anvil.yaml` or `anvil validate client_code/<FormName>/form_template.yaml` when the Anvil CLI is available.
 
 Avoid:
 
@@ -219,12 +227,14 @@ find anvil_reference -type f -maxdepth 1 -print
 For app changes:
 
 - Run any project-specific tests or scripts first.
+- Validate changed YAML with the Anvil CLI when available.
 - If no tests exist, start the App Server locally:
 
 ```bash
 anvil-app-server --app .
 ```
 
+- If the intended workflow is hosted-editor sync rather than local App Server, run `anvil watch` only after verifying the Anvil app id, branch, account, and server URL. Use `anvil watch --staged-only` when you want Git staging to control what syncs.
 - Open the relevant page.
 - Exercise the edited event handlers.
 - Watch browser console and server logs.

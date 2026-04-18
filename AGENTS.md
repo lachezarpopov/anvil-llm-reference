@@ -6,7 +6,7 @@ This repository contains an Anvil app or Anvil app reference material. Before ma
 
 If `anvil_reference/README.md` exists, read it before making Anvil-specific changes. Then read the most relevant reference files for the task:
 
-- App structure, `anvil.yaml`, services, local App Server: `anvil_reference/01_app_structure_and_runtime.md`
+- App structure, `anvil.yaml`, services, Anvil CLI, local App Server: `anvil_reference/01_app_structure_and_runtime.md`
 - Form YAML, component trees, event/data bindings, layout properties: `anvil_reference/02_form_template_yaml.md`
 - Form lifecycle, component APIs, `self.item`, data binding writeback: `anvil_reference/03_forms_components_and_data_bindings.md`
 - CSS, roles, generated DOM wrappers, ColumnPanel/FlowPanel/GridPanel quirks: `anvil_reference/04_layout_dom_css.md`
@@ -112,7 +112,9 @@ Follow the app's existing navigation style. If routing is present, use the exist
 For Anvil app changes:
 
 - Run available project tests or checks first.
+- If the Anvil CLI is available, run `anvil validate anvil.yaml` and validate any changed Form YAML.
 - If practical, run the app with `anvil-app-server --app .` from the app root.
+- Run `anvil watch` only when you intend to sync local files to an Anvil app and know the target app/account.
 - Exercise the edited Form/page.
 - Watch browser console and server logs.
 - Check relevant responsive layouts for CSS changes.
@@ -121,4 +123,3 @@ For docs-only changes:
 
 - Check links and filenames.
 - Scan for non-portable references if the docs are intended to be copied into other repos.
-

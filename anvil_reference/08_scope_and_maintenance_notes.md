@@ -13,7 +13,7 @@ When these docs mention verification, they mean verification against the target 
 
 ## Baseline Assumptions
 
-These docs focus on modern filesystem Anvil apps with:
+These docs focus on modern Anvil apps stored as local files with:
 
 - `anvil.yaml` at the app root.
 - Client Forms under `client_code/`.
@@ -73,6 +73,7 @@ These areas can change across Anvil versions, themes, or hosting/runtime environ
 - Material 3 component APIs and DOM.
 - Data Tables model-class features.
 - Routing dependency APIs.
+- Anvil CLI beta behavior, command names, and sync semantics.
 - Local App Server command-line flags.
 - Hosted-only service behavior.
 
@@ -110,6 +111,7 @@ This folder is intended to be sufficient for common agent work. For up-to-date p
 - Custom components: `https://anvil.works/docs/client/customisation/custom-components`
 - Component libraries: `https://anvil.works/docs/components`
 - URL routing: `https://anvil.works/docs/client/navigation/routing`
+- Anvil CLI: `https://anvil.works/docs/using-another-ide/quickstart`
 
 ## Runtime Source Code
 

@@ -231,6 +231,17 @@ type: form:DEPENDENCY_ID:widgets.Tabulator
 
 Exact formats vary by app and dependency. Copy a nearby existing reference when adding similar components.
 
+## Validating YAML
+
+If the Anvil CLI is installed, validate edited app and Form YAML before running the app:
+
+```bash
+anvil validate anvil.yaml
+anvil validate client_code/MyForm/form_template.yaml
+```
+
+`anvil validate <file>` chooses the schema from the file path. It can catch malformed or schema-invalid YAML, but it does not prove that referenced Python handler methods exist or that the UI behaves correctly at runtime.
+
 ## HTML Template Slots
 
 HTML templates declare slots in theme HTML:
@@ -372,4 +383,3 @@ properties:
 ```
 
 Before finalizing, check that every YAML handler name exists in the Form Python and that every referenced custom component or dependency import exists.
-
