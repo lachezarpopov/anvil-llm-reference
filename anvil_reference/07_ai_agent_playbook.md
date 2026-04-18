@@ -21,10 +21,9 @@ Then identify:
 - Existing server/service layer patterns.
 - Custom components and dependencies.
 
-If the Anvil CLI is installed, use it for lightweight local checks, but do not start syncing until the target app/account is known:
+If the Anvil CLI is installed, use it for lightweight local checks:
 
 ```bash
-anvil version
 anvil validate anvil.yaml
 ```
 
@@ -234,7 +233,7 @@ For app changes:
 anvil-app-server --app .
 ```
 
-- If the intended workflow is hosted-editor sync rather than local App Server, run `anvil watch` only after verifying the Anvil app id, branch, account, and server URL. Use `anvil watch --staged-only` when you want Git staging to control what syncs.
+- If the intended workflow is hosted-editor sync rather than local App Server, run `anvil watch` only after verifying the Anvil app id, branch, account, and server URL. During watch sync, normal uncommitted-change checks may not reflect the latest local edits because the working commit can be amended.
 - Open the relevant page.
 - Exercise the edited event handlers.
 - Watch browser console and server logs.

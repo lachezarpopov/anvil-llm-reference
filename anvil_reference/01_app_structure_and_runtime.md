@@ -158,76 +158,31 @@ Prefer `client: none` by default and expose narrow server functions or restricte
 
 ## Local Development With Anvil CLI
 
-The Anvil CLI is for editing Anvil apps in a local IDE while syncing with the Anvil Editor. It is different from the local App Server:
+The Anvil CLI is for checking out Anvil apps, editing them in a local IDE, validating YAML, and syncing local edits with the Anvil Editor. It is different from the local App Server:
 
 - Use the Anvil CLI when the goal is to check out a hosted Anvil app, validate local YAML files, or sync local file edits back to Anvil.
 - Use the local App Server when the goal is to run an app locally from files.
 
-The CLI is currently beta, so check the official CLI docs or `anvil help` when command behavior matters.
-
-Common setup:
+Common commands:
 
 ```bash
 anvil configure
-anvil login
-```
-
-`anvil configure` performs guided setup, including default server URL, preferred editor, verbose logging, and login. The CLI stores local configuration and authentication tokens on the user's machine; do not copy those config files into an app repo.
-
-Checkout examples:
-
-```bash
-anvil checkout
 anvil checkout APP_ID MyApp
-anvil checkout https://anvil.works/git/APP_ID.git MyApp
-```
-
-`anvil checkout` can also accept an Editor URL or run interactively. Useful checkout options include:
-
-- `--branch BRANCH`: Check out a specific branch.
-- `--depth N`: Create a shallow clone.
-- `--single-branch`: Clone only one branch.
-- `--origin NAME`: Use a custom Git remote name.
-- `--open`: Open the destination after checkout.
-- `--url ANVIL_URL` and `--user USERNAME`: Specify installation/account when inference is ambiguous.
-
-Sync examples:
-
-```bash
 cd MyApp
 anvil watch
-anvil watch --appid APP_ID
-anvil watch --staged-only
-```
-
-`anvil watch` watches local files and syncs them with the selected Anvil app. Before running it, verify the target app, branch, account, and server URL. `--staged-only` is useful when you want to sync only files staged with Git.
-
-Useful watch options:
-
-- `--appid APP_ID`: Specify the app id directly.
-- `--first`: Auto-select the first detected app id.
-- `--staged-only`: Sync only staged files.
-- `--auto`: Restart on branch changes and sync when behind.
-- `--open`: Open the watched path in the preferred editor.
-- `--url ANVIL_URL` and `--user USERNAME`: Specify installation/account.
-
-Validation examples:
-
-```bash
 anvil validate anvil.yaml
 anvil validate client_code/Form1/form_template.yaml
 ```
 
+`anvil configure` performs guided setup and login. The CLI stores local configuration and authentication tokens on the user's machine; do not copy those config files into an app repo.
+
+`anvil checkout` can check out an app from an app id, Editor URL, Git URL, or interactive selection.
+
+`anvil watch` watches local files and syncs them live with the selected Anvil app. Before running it, verify the target app, branch, account, and server URL. Use `anvil watch --staged-only` when Git staging should control what syncs. While a watch process is running, normal uncommitted-change checks may not reflect the latest local edits because the working commit can be amended during sync.
+
 `anvil validate <file>` validates YAML based on the path, currently for `anvil.yaml` and `client_code/**/*.yaml`. Use it after editing app YAML or Form template YAML. Validation catches schema problems, but it does not replace running the app and exercising the edited UI.
 
-Other useful commands:
-
-- `anvil config`: Manage CLI configuration.
-- `anvil version`: Show version information.
-- `anvil update`: Update the CLI.
-- `anvil logout`: Log out from Anvil.
-- `anvil --json ...`: Emit NDJSON for scripts or agent tooling where supported.
-- `anvil --verbose ...`: Show more detailed output.
+The CLI is currently beta, so check the official CLI docs or `anvil help <command>` when command behavior or options matter.
 
 ## Local Development With App Server
 

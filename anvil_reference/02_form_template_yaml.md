@@ -233,14 +233,13 @@ Exact formats vary by app and dependency. Copy a nearby existing reference when 
 
 ## Validating YAML
 
-If the Anvil CLI is installed, validate edited app and Form YAML before running the app:
+If the Anvil CLI is installed, validate edited app or Form YAML before running the app:
 
 ```bash
-anvil validate anvil.yaml
 anvil validate client_code/MyForm/form_template.yaml
 ```
 
-`anvil validate <file>` chooses the schema from the file path. It can catch malformed or schema-invalid YAML, but it does not prove that referenced Python handler methods exist or that the UI behaves correctly at runtime.
+`anvil validate <file>` catches schema problems, but it does not prove that referenced Python handler methods exist or that the UI behaves correctly at runtime.
 
 ## HTML Template Slots
 
